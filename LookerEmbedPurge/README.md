@@ -2,7 +2,7 @@
 Deploy with `serverless deploy`
 
 # Required Env Vars
-You must define the following ENV var in the AWS lambda _**after**_ deployment
+You must define the following ENV vars in the AWS lambda _**after**_ deployment
 * `CLIENT_ID` Looker client ID
 * `CLIENT_SECRET` Looker secret
 * `USERS_TO_REQUEST` Number of users to request with the looker API call
