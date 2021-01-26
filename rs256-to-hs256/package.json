@@ -1,0 +1,16 @@
+{
+  "name": "rs256-to-hs256",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^1.11.0"
+  }
+}

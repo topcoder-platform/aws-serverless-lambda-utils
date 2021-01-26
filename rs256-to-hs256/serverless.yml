@@ -1,0 +1,32 @@
+service: rs256-to-hs256
+
+# app and org for use with dashboard.serverless.com
+app: rs256-to-hs256
+org: mtwomey
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  timeout: 30
+
+# you can overwrite defaults here
+#  stage: dev
+#  region: us-east-1
+
+  stage: prod
+  region: us-east-1
+
+functions:
+  rs256ToHs256:
+    handler: handler.rs256ToHs256
+    name: rs256tohs256
+    events:
+      - alb:
+          listenerArn: arn:aws:elasticloadbalancing:us-east-1:409275337247:listener/app/TOPCODER-ROOT-ALB/42b025cc2dc819a7/ace7ffe826a58a24 # dev = arn:aws:elasticloadbalancing:us-east-1:811668436784:listener/app/TOPCODER-ROOT-ALB/7052344ace4ec115/759788e7ee09f2bf
+          priority: 70
+          conditions:
+            path: /helloConnectToLambda

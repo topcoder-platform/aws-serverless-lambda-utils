@@ -1,0 +1,1 @@
+This is not a clean example, needs cleanup. Was a workaround to allow Areana to work with old tokens.
