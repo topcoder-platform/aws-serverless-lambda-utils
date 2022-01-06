@@ -9,11 +9,11 @@ const HS256_AUDIENCE = process.env.HS256_AUDIENCE;
 const TARGET_HOST = process.env.TARGET_HOST
 
 let identifier; // used for more clear logging
-let logCount = 0;
+let logCount;
 
 module.exports.rs256ToHs256 = async (request) => {
     identifier = generateRandomIdentifier();
-
+    logCount = 0;
     // Log the thing along with params
     let incomingRequest = `Incoming request: ${request.path}`;
     let params = Object.entries(request.queryStringParameters || []).map(entry => {
